@@ -1,20 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const rootEl = document.getElementById('root');
+const render = Component => {
+  return ReactDOM.render(
+    <BrowserRouter>
+      <Component />
+    </BrowserRouter>,
+    document.getElementById('root')
+  );
+};
 
-ReactDOM.render(<App />, rootEl);
+render(App);
 
 if (module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('./App').default;
-    ReactDOM.render(<NextApp />, rootEl);
+    render(NextApp);
   });
 }
-
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
