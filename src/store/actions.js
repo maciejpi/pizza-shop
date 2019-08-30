@@ -15,3 +15,10 @@ export const toggleIngredient = (name, price, isSelected) => {
     isSelected,
   };
 };
+
+export const createPizza = data => {
+  return {
+    type: actionTypes.CREATE_PIZZA,
+    data,
+  };
+};

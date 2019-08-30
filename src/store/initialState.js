@@ -21,4 +21,5 @@ export default {
       price: null,
     },
   },
+  selectedPizzas: [],
 };
