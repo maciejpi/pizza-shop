@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  OrderSummary,
   PizzaDoughSelection,
   Ingredient,
   CreatePizzaButton,
@@ -23,6 +24,8 @@ const Menu = props => {
       <div>
         <CreatePizzaButton />
       </div>
+
+      <OrderSummary></OrderSummary>
     </>
   );
 };

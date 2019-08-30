@@ -1,7 +1,7 @@
 import initialState from '../initialState';
 import * as actionTypes from '../actionTypes';
 
-const reducer = (state = initialState.ingredients, action) => {
+export default (state = initialState.ingredients, action) => {
   switch (action.type) {
     case actionTypes.TOGGLE_INGREDIENT:
       return {
@@ -15,5 +15,3 @@ const reducer = (state = initialState.ingredients, action) => {
       return state;
   }
 };
-
-export default reducer;

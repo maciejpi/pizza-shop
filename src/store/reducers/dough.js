@@ -1,7 +1,7 @@
 import initialState from '../initialState';
 import * as actionTypes from '../actionTypes';
 
-const reducer = (state = initialState.dough, action) => {
+export default (state = initialState.dough, action) => {
   switch (action.type) {
     case actionTypes.SET_DOUGH:
       return {
@@ -14,5 +14,3 @@ const reducer = (state = initialState.dough, action) => {
       return state;
   }
 };
-
-export default reducer;
