@@ -6,3 +6,12 @@ export const setDough = data => {
     data,
   };
 };
+
+export const toggleIngredient = (name, price, isSelected) => {
+  return {
+    type: actionTypes.TOGGLE_INGREDIENT,
+    name,
+    price,
+    isSelected,
+  };
+};

@@ -1,5 +1,6 @@
 import React from 'react';
-import { PizzaDoughSelection } from '../components';
+import { PizzaDoughSelection, Ingredient } from '../components';
+import { ingredientOptions } from '../data';
 
 const Menu = props => {
   return (
@@ -8,6 +9,12 @@ const Menu = props => {
       <h2>Select your pizza size:</h2>
 
       <PizzaDoughSelection />
+
+      <h2>Select toppings:</h2>
+
+      {ingredientOptions.map(option => (
+        <Ingredient key={option.type} {...option} />
+      ))}
     </>
   );
 };

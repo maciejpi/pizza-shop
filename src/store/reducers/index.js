@@ -1,3 +1,9 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({});
+import ingredients from './ingredients';
+import dough from './dough';
+
+export default combineReducers({
+  ingredients,
+  dough,
+});
