@@ -1,5 +1,9 @@
 import React from 'react';
-import { PizzaDoughSelection, Ingredient } from '../components';
+import {
+  PizzaDoughSelection,
+  Ingredient,
+  CreatePizzaButton,
+} from '../components';
 import { ingredientOptions } from '../data';
 
 const Menu = props => {
@@ -15,6 +19,10 @@ const Menu = props => {
       {ingredientOptions.map(option => (
         <Ingredient key={option.type} {...option} />
       ))}
+
+      <div>
+        <CreatePizzaButton />
+      </div>
     </>
   );
 };
