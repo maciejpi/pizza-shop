@@ -8,8 +8,11 @@ import {
   PaymentDetails,
 } from '../components';
 
+import { validCard } from '../data';
+
 const Checkout = () => {
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [cardError, setCardError] = useState(false);
   const [contactState, setContactDetails] = useState({
     name: '',
     phone: '',
@@ -50,7 +53,20 @@ const Checkout = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const isCardValid = (cardObj, testCard) => {
+    return Object.keys(testCard).every(key => {
+      return cardObj.hasOwnProperty(key) && cardObj[key] === testCard[key];
+    });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    if (!isCardValid(paymentState, validCard)) {
+      setCardError(true);
+      return;
+    }
+    setCardError(false);
     setOrderPlaced(true);
   };
 
@@ -71,6 +87,7 @@ const Checkout = () => {
         />
 
         <PaymentDetails
+          cardError={cardError}
           handlePaymentChange={handlePaymentChange}
           paymentState={paymentState}
         />

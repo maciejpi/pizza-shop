@@ -6,11 +6,14 @@ const PaymentDetails = props => {
   const {
     paymentState: { cardNumber, expDate, cvvNumber },
     handlePaymentChange,
+    cardError,
   } = props;
 
   return (
     <>
       <h2>Contact Details</h2>
+
+      {cardError && <p>The card is invalid!</p>}
 
       <label htmlFor="cardNumber">Card Number</label>
       <Input
