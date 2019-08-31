@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-const OrderSummary = () => {
+const OrderSummary = ({ pathname }) => {
   const pizzas = useSelector(state => state.selectedPizzas);
 
   return (
@@ -10,17 +11,19 @@ const OrderSummary = () => {
       {pizzas.length ? (
         <div>
           {pizzas.map(({ price, dough, ingredients }, i) => (
-            <>
+            <div key={i}>
               <div>name: pizza {i + 1}</div>
               <div>price: {price}</div>
               <div>size: {dough}</div>
               <div>{ingredients.join(', ')}</div>
-            </>
+            </div>
           ))}
         </div>
       ) : (
         <p>Your basket is empty.</p>
       )}
+      {/* no pointer-events when !pizza.length */}
+      {pathname === '/' && <Link to="/checkout">Go to checkout</Link>}
     </>
   );
 };

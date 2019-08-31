@@ -7,7 +7,7 @@ import {
 } from '../components';
 import { ingredientOptions } from '../data';
 
-const Menu = props => {
+const Menu = ({ location }) => {
   return (
     <>
       <h1>menu</h1>
@@ -25,7 +25,7 @@ const Menu = props => {
         <CreatePizzaButton />
       </div>
 
-      <OrderSummary></OrderSummary>
+      <OrderSummary {...location}></OrderSummary>
     </>
   );
 };
