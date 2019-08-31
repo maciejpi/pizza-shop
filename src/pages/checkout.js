@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 
-import { ContactDetails, OrderSummary } from '../components';
+import { AddressDetails, ContactDetails, OrderSummary } from '../components';
 
 const Checkout = () => {
   const [orderPlaced, setOrderPlaced] = useState(false);
@@ -9,11 +9,25 @@ const Checkout = () => {
     name: '',
     phone: '',
   });
+  const [addressState, setAddressDetails] = useState({
+    street: '',
+    houseNumber: '',
+    postCode: '',
+    city: '',
+  });
 
   const handleContactChange = e => {
     const { name, value } = e.target;
     setContactDetails({
       ...contactState,
+      [name]: value,
+    });
+  };
+
+  const handleAddressChange = e => {
+    const { name, value } = e.target;
+    setAddressDetails({
+      ...addressState,
       [name]: value,
     });
   };
@@ -31,6 +45,11 @@ const Checkout = () => {
         <ContactDetails
           handleContactChange={handleContactChange}
           contactState={contactState}
+        />
+
+        <AddressDetails
+          handleAddressChange={handleAddressChange}
+          addressState={addressState}
         />
 
         <button type="submit">Place Order</button>
