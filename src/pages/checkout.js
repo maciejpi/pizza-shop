@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 
-import { AddressDetails, ContactDetails, OrderSummary } from '../components';
+import {
+  AddressDetails,
+  ContactDetails,
+  OrderSummary,
+  PaymentDetails,
+} from '../components';
 
 const Checkout = () => {
   const [orderPlaced, setOrderPlaced] = useState(false);
@@ -14,6 +19,11 @@ const Checkout = () => {
     houseNumber: '',
     postCode: '',
     city: '',
+  });
+  const [paymentState, setPaymentDetails] = useState({
+    cardNumber: '',
+    expDate: '',
+    cvvNumber: '',
   });
 
   const handleContactChange = e => {
@@ -28,6 +38,14 @@ const Checkout = () => {
     const { name, value } = e.target;
     setAddressDetails({
       ...addressState,
+      [name]: value,
+    });
+  };
+
+  const handlePaymentChange = e => {
+    const { name, value } = e.target;
+    setPaymentDetails({
+      ...paymentState,
       [name]: value,
     });
   };
@@ -50,6 +68,11 @@ const Checkout = () => {
         <AddressDetails
           handleAddressChange={handleAddressChange}
           addressState={addressState}
+        />
+
+        <PaymentDetails
+          handlePaymentChange={handlePaymentChange}
+          paymentState={paymentState}
         />
 
         <button type="submit">Place Order</button>

@@ -5,6 +5,7 @@ import CreatePizzaButton from './createPizzaButton';
 import OrderSummary from './orderSummary';
 import AddressDetails from './addressDetails';
 import ContactDetails from './contactDetails';
+import PaymentDetails from './paymentDetails';
 import Input from './input';
 
 export {
@@ -15,5 +16,6 @@ export {
   OrderSummary,
   AddressDetails,
   ContactDetails,
+  PaymentDetails,
   Input,
 };
