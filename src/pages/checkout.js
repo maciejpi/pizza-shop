@@ -1,10 +1,22 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 
-import { OrderSummary } from '../components';
+import { ContactDetails, OrderSummary } from '../components';
 
 const Checkout = () => {
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [contactState, setContactDetails] = useState({
+    name: '',
+    phone: '',
+  });
+
+  const handleContactChange = e => {
+    const { name, value } = e.target;
+    setContactDetails({
+      ...contactState,
+      [name]: value,
+    });
+  };
 
   const handleSubmit = () => {
     setOrderPlaced(true);
@@ -16,9 +28,12 @@ const Checkout = () => {
 
       <h1>checkout</h1>
       <form onSubmit={handleSubmit}>
-        <button type="submit" onSubmit={handleSubmit}>
-          Place Order
-        </button>
+        <ContactDetails
+          handleContactChange={handleContactChange}
+          contactState={contactState}
+        />
+
+        <button type="submit">Place Order</button>
       </form>
       <OrderSummary></OrderSummary>
     </>

@@ -3,6 +3,8 @@ import PizzaDoughSelection from './pizzaDough/';
 import Ingredient from './ingredient/';
 import CreatePizzaButton from './createPizzaButton';
 import OrderSummary from './orderSummary';
+import ContactDetails from './contactDetails';
+import Input from './input';
 
 export {
   NotFound,
@@ -10,4 +12,6 @@ export {
   Ingredient,
   CreatePizzaButton,
   OrderSummary,
+  ContactDetails,
+  Input,
 };
