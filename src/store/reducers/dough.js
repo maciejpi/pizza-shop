@@ -9,7 +9,10 @@ export default (state = initialState.dough, action) => {
         size: action.data.size,
         price: action.data.price,
       };
-
+    case actionTypes.DELETE_DOUGH:
+      return {
+        ...initialState.dough,
+      };
     default:
       return state;
   }

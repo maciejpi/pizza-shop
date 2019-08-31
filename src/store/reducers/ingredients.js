@@ -11,6 +11,10 @@ export default (state = initialState.ingredients, action) => {
           price: action.price,
         },
       };
+    case actionTypes.DELETE_INGREDIENTS:
+      return {
+        ...initialState.ingredients,
+      };
     default:
       return state;
   }

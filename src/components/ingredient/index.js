@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useRef, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { toggleIngredient } from '../../store/actions';
 
@@ -8,7 +8,7 @@ const Ingredient = ({ label, type, price }) => {
   const firstUpdate = useRef(false);
   const dispatch = useDispatch();
   const [isChecked, toggleCheckbox] = useState(false);
-
+  const isSelected = useSelector(state => state.ingredients[type].isSelected);
   const actualPrice = isChecked ? price : null;
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Ingredient = ({ label, type, price }) => {
       <label>
         {label}
         <input
-          checked={isChecked}
+          checked={isSelected}
           type="checkbox"
           value={type}
           onChange={() => setIngredient()}

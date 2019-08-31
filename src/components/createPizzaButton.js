@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { createPizza } from '../store/actions';
+import { createPizza, deleteIngredients, deleteDough } from '../store/actions';
 
 const CreatePizzaButton = () => {
   const dispatch = useDispatch();
@@ -35,10 +35,12 @@ const CreatePizzaButton = () => {
       ingredients,
     };
     dispatch(createPizza(pizza));
+    dispatch(deleteDough());
+    dispatch(deleteIngredients());
   };
 
   return (
-    <button onClick={makePizza}>
+    <button disabled={!doughPrice} onClick={makePizza}>
       Add to basket for {currentSelectionPrice}
     </button>
   );

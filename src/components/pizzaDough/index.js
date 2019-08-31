@@ -1,10 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { setDough } from '../../store/actions';
 import { doughOptions } from '../../data';
 
 const PizzaDoughSelection = () => {
+  const selectedDough = useSelector(state => state.dough);
   const dispatch = useDispatch();
 
   const handleDoughSelection = (size, price) => {
@@ -17,6 +18,7 @@ const PizzaDoughSelection = () => {
         <label key={size}>
           {label}
           <input
+            checked={size === selectedDough.size}
             type="radio"
             value={size}
             name="pizzaDough"
