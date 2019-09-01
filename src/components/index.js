@@ -1,5 +1,5 @@
 import NotFound from './notFound';
-import PizzaDoughSelection from './pizzaDough/';
+import DoughOption from './doughOption';
 import Ingredient from './ingredient/';
 import PizzaGenerator from './pizzaGenerator';
 import OrderSummary from './orderSummary';
@@ -12,7 +12,7 @@ import Layout from './layout';
 
 export {
   NotFound,
-  PizzaDoughSelection,
+  DoughOption,
   Ingredient,
   PizzaGenerator,
   OrderSummary,

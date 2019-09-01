@@ -10,5 +10,5 @@ export const colors = {
   black: '#222',
   red: '#cb1e0d',
   grey: '#f6f7f7',
-  greyDark: '#979797',
+  greyDark: '#d3d3d3',
 };

@@ -1,7 +1,8 @@
 import { normalize } from 'polished';
 import { createGlobalStyle } from 'styled-components/macro';
 
-import { font } from './helpers';
+import { font, space } from './helpers';
+import { colors } from './variables';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize()}
@@ -14,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font: ${font()};
+    background-color: ${colors.grey};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -22,6 +24,8 @@ const GlobalStyle = createGlobalStyle`
   }
   h2 {
     font: ${font({ size: 'large' })};
+    margin-top: ${space(5)};
+    margin-bottom: 0;
   }
 `;
 
