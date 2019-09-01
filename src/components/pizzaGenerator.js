@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { createPizza, deleteIngredients, deleteDough } from '../store/actions';
 
-const CreatePizzaButton = () => {
+const PizzaGenerator = () => {
   const dispatch = useDispatch();
   const doughPrice = useSelector(state => state.dough.price);
   const doughSize = useSelector(state => state.dough.size);
@@ -46,4 +46,4 @@ const CreatePizzaButton = () => {
   );
 };
 
-export default CreatePizzaButton;
+export default PizzaGenerator;

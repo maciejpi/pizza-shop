@@ -1,7 +1,7 @@
 import NotFound from './notFound';
 import PizzaDoughSelection from './pizzaDough/';
 import Ingredient from './ingredient/';
-import CreatePizzaButton from './createPizzaButton';
+import PizzaGenerator from './pizzaGenerator';
 import OrderSummary from './orderSummary';
 import AddressDetails from './addressDetails';
 import ContactDetails from './contactDetails';
@@ -12,7 +12,7 @@ export {
   NotFound,
   PizzaDoughSelection,
   Ingredient,
-  CreatePizzaButton,
+  PizzaGenerator,
   OrderSummary,
   AddressDetails,
   ContactDetails,

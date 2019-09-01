@@ -3,7 +3,7 @@ import {
   OrderSummary,
   PizzaDoughSelection,
   Ingredient,
-  CreatePizzaButton,
+  PizzaGenerator,
 } from '../components';
 import { ingredientOptions } from '../data';
 
@@ -22,7 +22,7 @@ const Menu = ({ location }) => {
       ))}
 
       <div>
-        <CreatePizzaButton />
+        <PizzaGenerator />
       </div>
 
       <OrderSummary {...location}></OrderSummary>
