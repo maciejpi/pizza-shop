@@ -27,6 +27,10 @@ const GlobalStyle = createGlobalStyle`
     margin-top: ${space(5)};
     margin-bottom: 0;
   }
+  p{
+    margin-top: ${space()};
+    margin-bottom: 0;
+  }
 `;
 
 export default GlobalStyle;

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { toggleIngredient } from '../../store/actions';
 import Input from '../input';
+import { ClickArea, Checkbox, CheckboxWrapper } from './style';
+import { ItemName, ItemPrice } from '../baseStylingComponents';
 
 const Ingredient = ({ label, type, price }) => {
   // setting the ref prevents dispatching 'toggleIngredient' on first render
@@ -17,7 +19,9 @@ const Ingredient = ({ label, type, price }) => {
       dispatch(toggleIngredient(type, actualPrice, isChecked));
     }
 
-    firstUpdate.current = true;
+    if (firstUpdate.current === false) {
+      firstUpdate.current = true;
+    }
   }, [actualPrice, dispatch, isChecked, price, type]);
 
   const setIngredient = useCallback(
@@ -28,14 +32,20 @@ const Ingredient = ({ label, type, price }) => {
   return (
     <>
       <label>
-        {label}
-        <Input
-          checked={isSelected}
-          type="checkbox"
-          value={type}
-          onChange={() => setIngredient()}
-        />
-        {price}
+        <ClickArea>
+          <CheckboxWrapper>
+            <Checkbox isChecked={isSelected} />
+            <ItemName>{label}</ItemName>
+            <Input
+              checked={isSelected}
+              type="checkbox"
+              value={type}
+              onChange={() => setIngredient()}
+              isHidden
+            />
+          </CheckboxWrapper>
+          <ItemPrice>{price}</ItemPrice>
+        </ClickArea>
       </label>
     </>
   );

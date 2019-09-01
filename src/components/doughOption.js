@@ -5,27 +5,16 @@ import styled from 'styled-components/macro';
 import Input from './input';
 import { setDough } from '../store/actions';
 import { colors } from '../styles/variables';
-import { font } from '../styles/helpers';
+import { ClickAreaBase, ItemName, ItemPrice } from './baseStylingComponents';
 
-const ClickArea = styled.span`
-  display: flex;
+const ClickArea = styled(ClickAreaBase)`
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
   width: 180px;
   height: 140px;
-  border-radius: 4px;
   border: solid
     ${props =>
       props.isSelected ? `2px ${colors.red}` : `1px ${colors.greyDark}`};
-`;
-
-const Name = styled.span`
-  font: ${font({ size: 'medium' })};
-`;
-
-const Price = styled.span`
-  font: ${font({ size: 'medium', weight: 'bold' })};
 `;
 
 const DoughOption = ({ size, price, label }) => {
@@ -40,7 +29,7 @@ const DoughOption = ({ size, price, label }) => {
     <>
       <label>
         <ClickArea isSelected={size === selectedDough.size}>
-          <Name>{label}</Name>
+          <ItemName>{label}</ItemName>
           <Input
             checked={size === selectedDough.size}
             type="radio"
@@ -49,7 +38,7 @@ const DoughOption = ({ size, price, label }) => {
             onChange={() => handleDoughSelection(size, price)}
             isHidden
           />
-          <Price>{price}</Price>
+          <ItemPrice>{price}</ItemPrice>
         </ClickArea>
       </label>
     </>

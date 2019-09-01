@@ -12,3 +12,5 @@ export const colors = {
   grey: '#f6f7f7',
   greyDark: '#d3d3d3',
 };
+
+export const mainSectionWidth = 600;
