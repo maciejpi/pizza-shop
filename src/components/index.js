@@ -7,6 +7,8 @@ import AddressDetails from './addressDetails';
 import ContactDetails from './contactDetails';
 import PaymentDetails from './paymentDetails';
 import Input from './input';
+import Header from './header';
+import Layout from './layout';
 
 export {
   NotFound,
@@ -18,4 +20,6 @@ export {
   ContactDetails,
   PaymentDetails,
   Input,
+  Header,
+  Layout,
 };
