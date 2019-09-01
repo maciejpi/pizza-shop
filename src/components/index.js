@@ -9,6 +9,7 @@ import PaymentDetails from './paymentDetails';
 import Input from './input';
 import Header from './header';
 import Layout from './layout';
+import ButtonElement from './buttonElement';
 
 export {
   NotFound,
@@ -22,4 +23,5 @@ export {
   Input,
   Header,
   Layout,
+  ButtonElement,
 };

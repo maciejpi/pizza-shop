@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components/macro';
 
 import { colors } from '../../styles/variables';
 import { font, space } from '../../styles/helpers';
-import { ClickAreaBase } from '../baseStylingComponents';
+import { ClickAreaBase } from '../../styles/common';
 
 export const ClickArea = styled(ClickAreaBase)`
   justify-content: space-between;

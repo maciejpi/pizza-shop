@@ -18,18 +18,15 @@ const Menu = ({ location }) => {
           <DoughOption key={option.size} {...option} />
         ))}
       </DoughOptionsWrapper>
-
       <h2>Add ingredients:</h2>
-      <p>All pizzas come with tomato sauce and mozzarella.</p>
+      <p>All pizzas come with tomato sauce and mozzarella</p>
       <IngredientOptionsWrapper>
         {ingredientOptions.map(option => (
           <Ingredient key={option.type} {...option} />
         ))}
       </IngredientOptionsWrapper>
 
-      <div>
-        <PizzaGenerator />
-      </div>
+      <PizzaGenerator />
 
       <OrderSummary {...location}></OrderSummary>
     </>

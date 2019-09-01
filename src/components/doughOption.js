@@ -5,7 +5,7 @@ import styled from 'styled-components/macro';
 import Input from './input';
 import { setDough } from '../store/actions';
 import { colors } from '../styles/variables';
-import { ClickAreaBase, ItemName, ItemPrice } from './baseStylingComponents';
+import { ClickAreaBase, ItemName, ItemPrice } from '../styles/common';
 
 const ClickArea = styled(ClickAreaBase)`
   flex-direction: column;

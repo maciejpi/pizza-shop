@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { createPizza, deleteIngredients, deleteDough } from '../store/actions';
+import ButtonElement, { ButtonWrapper, CustomContent } from './buttonElement';
+import { CallToActionStyle } from '../styles/common';
 
 const PizzaGenerator = () => {
   const dispatch = useDispatch();
@@ -40,9 +42,16 @@ const PizzaGenerator = () => {
   };
 
   return (
-    <button disabled={!doughPrice} onClick={makePizza}>
-      Add to basket for {currentSelectionPrice}
-    </button>
+    <ButtonWrapper>
+      <ButtonElement isDisabled={!doughPrice} onClick={makePizza}>
+        <CallToActionStyle isDisabled={!doughPrice}>
+          Add to basket
+          <CustomContent isDisabled={!currentSelectionPrice}>
+            &nbsp;for {currentSelectionPrice}
+          </CustomContent>
+        </CallToActionStyle>
+      </ButtonElement>
+    </ButtonWrapper>
   );
 };
 
