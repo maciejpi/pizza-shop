@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Input = props => {
-  const { name, id, type, value, onChange } = props;
+  const { name, id, type, value, onChange, checked } = props;
 
   return (
     <>
@@ -11,6 +11,7 @@ const Input = props => {
         id={id}
         value={value}
         onChange={onChange}
+        checked={checked}
       />
     </>
   );
