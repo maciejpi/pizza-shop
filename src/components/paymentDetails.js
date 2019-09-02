@@ -1,8 +1,7 @@
 import React from 'react';
-
-import Input from './input';
 import styled from 'styled-components/macro';
 
+import Input from './input';
 import { colors, inputWidthLarge, inputWidthMedium } from '../styles/variables';
 import {
   FormLabel,
@@ -36,6 +35,7 @@ const PaymentDetails = props => {
         onChange={handlePaymentChange}
         width={inputWidthLarge}
       />
+
       <FormElementsWrapper>
         <div>
           <FormLabel htmlFor="expDate">Expiry Date</FormLabel>
@@ -45,7 +45,7 @@ const PaymentDetails = props => {
             id="expDate"
             value={expDate}
             onChange={handlePaymentChange}
-            placeholder="MM/YYYY"
+            placeholder="MM/YY"
             width={inputWidthMedium}
           />
         </div>

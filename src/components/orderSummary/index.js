@@ -9,7 +9,7 @@ import {
   SummaryTitle,
   EmptyBasketInfo,
   OrderItem,
-  WithIngs,
+  WithIngredients,
   TotalPrice,
   CurrentItemPrice,
   CancelIem,
@@ -42,9 +42,9 @@ const OrderSummary = ({ path, isCheckout, isAligned }) => {
                 <OrderItem key={i}>
                   <div>
                     <ItemName>{capitalize(dough)} pizza</ItemName>
-                    <WithIngs isHidden={!ingredients.length}>
+                    <WithIngredients isHidden={!ingredients.length}>
                       With {ingredients.join(', ')}
-                    </WithIngs>
+                    </WithIngredients>
                   </div>
                   <CurrentItemPrice>
                     <ItemPrice>{currency.format(price)}</ItemPrice>

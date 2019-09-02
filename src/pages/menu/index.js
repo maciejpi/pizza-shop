@@ -22,6 +22,7 @@ const Menu = ({ match }) => (
             <DoughOption key={option.size} {...option} />
           ))}
         </DoughOptionsWrapper>
+
         <h2>Add ingredients</h2>
         <p>All pizzas come with tomato sauce and mozzarella</p>
         <IngredientOptionsWrapper>

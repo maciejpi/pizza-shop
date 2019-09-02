@@ -2,11 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components/macro';
 
-import Input from './input';
 import { setDough } from '../store/actions';
+import { ClickAreaBase, ItemName, ItemPrice } from '../styles/common';
 import { colors } from '../styles/variables';
 import Input from './input';
-
 import { currency } from '../helpers';
 
 const ClickArea = styled(ClickAreaBase)`
@@ -32,6 +31,7 @@ const DoughOption = ({ size, price, label }) => {
       <label>
         <ClickArea isSelected={size === selectedDough.size}>
           <ItemName>{label}</ItemName>
+
           <Input
             checked={size === selectedDough.size}
             type="radio"
@@ -40,6 +40,7 @@ const DoughOption = ({ size, price, label }) => {
             onChange={() => handleDoughSelection(size, price)}
             isHidden
           />
+
           <ItemPrice>{currency.format(price)}</ItemPrice>
         </ClickArea>
       </label>

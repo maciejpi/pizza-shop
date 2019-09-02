@@ -35,19 +35,17 @@ const Input = props => {
   } = props;
 
   return (
-    <>
-      <StyledInput
-        type={type}
-        name={name}
-        id={id}
-        value={value}
-        onChange={onChange}
-        checked={checked}
-        isHidden={isHidden}
-        width={width}
-        placeholder={placeholder}
-      />
-    </>
+    <StyledInput
+      type={type}
+      name={name}
+      id={id}
+      value={value}
+      onChange={onChange}
+      checked={checked}
+      isHidden={isHidden}
+      width={width}
+      placeholder={placeholder}
+    />
   );
 };
 

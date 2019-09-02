@@ -27,7 +27,7 @@ export const OrderItem = styled.div`
   }
 `;
 
-export const WithIngs = styled.p`
+export const WithIngredients = styled.p`
   margin-top: ${space()};
   display: ${props => props.isHidden && 'none'};
 `;

@@ -14,6 +14,7 @@ const ContactDetails = props => {
   return (
     <FormSectionWrapper>
       <h2>Delivery Details</h2>
+
       <FormLabel htmlFor="name">Name</FormLabel>
       <Input
         type="text"
@@ -23,6 +24,7 @@ const ContactDetails = props => {
         onChange={handleContactChange}
         width={inputWidthLarge}
       />
+
       <FormLabel htmlFor="phone">Phone Number</FormLabel>
       <Input
         type="number"
