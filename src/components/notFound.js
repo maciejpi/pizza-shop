@@ -9,9 +9,7 @@ const NotFound = () => (
     <Header />
     <LayoutSecondary>
       <h2>This page doesn't exist</h2>
-      <LinkElement linkTo="/" secondary>
-        Go back to homepage
-      </LinkElement>
+      <LinkElement linkTo="/">Go back to homepage</LinkElement>
     </LayoutSecondary>
   </>
 );

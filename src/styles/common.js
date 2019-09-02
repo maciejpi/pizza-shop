@@ -72,4 +72,9 @@ export const LayoutSecondary = styled.div`
   h2 {
     margin-top: ${space(20)};
   }
+  a {
+    width: auto;
+    margin-top: ${space(4)};
+    padding: 0 ${space(4)};
+  }
 `;
