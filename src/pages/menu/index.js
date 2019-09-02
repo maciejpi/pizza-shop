@@ -11,7 +11,7 @@ import { ingredientOptions, doughOptions } from '../../data';
 import { DoughOptionsWrapper, IngredientOptionsWrapper } from './style';
 import { Layout } from '../../styles/common';
 
-const Menu = ({ location }) => (
+const Menu = ({ match }) => (
   <>
     <Header />
     <Layout>
@@ -33,7 +33,7 @@ const Menu = ({ location }) => (
         <PizzaGenerator />
       </main>
 
-      <OrderSummary {...location}></OrderSummary>
+      <OrderSummary {...match}></OrderSummary>
     </Layout>
   </>
 );

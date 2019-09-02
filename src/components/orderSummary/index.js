@@ -13,7 +13,7 @@ import {
   TotalPrice,
 } from './style';
 
-const OrderSummary = ({ pathname, isCheckout }) => {
+const OrderSummary = ({ path, isCheckout }) => {
   const pizzas = useSelector(state => state.selectedPizzas);
   const totalPrice = pizzas.reduce((total, pizza) => total + pizza.price, 0);
 
@@ -22,9 +22,9 @@ const OrderSummary = ({ pathname, isCheckout }) => {
   return (
     <Aside>
       <AsideInner>
-        {pathname === '/checkout' && <SummaryTitle>Your order</SummaryTitle>}
+        {path === '/checkout' && <SummaryTitle>Your order</SummaryTitle>}
 
-        {pathname === '/' && (
+        {path === '/' && (
           <LinkElement linkTo="/checkout" isDisabled={!pizzas.length}>
             <CallToActionStyle isDisabled={!pizzas.length}>
               Go to checkout

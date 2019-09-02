@@ -13,7 +13,7 @@ import { validCard } from '../data';
 import { deletePizzas } from '../store/actions';
 import { Layout } from '../styles/common';
 
-const Checkout = ({ location, match }) => {
+const Checkout = ({ match }) => {
   const dispatch = useDispatch();
   const pizzas = useSelector(state => state.selectedPizzas);
   const [orderPlaced, setOrderPlaced] = useState(false);
@@ -117,7 +117,7 @@ const Checkout = ({ location, match }) => {
 
         <button type="submit">Place Order</button>
       </form>
-        <OrderSummary {...location} />
+        <OrderSummary {...match} />
       </Layout>
     </>
   );
