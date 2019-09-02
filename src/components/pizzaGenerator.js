@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { createPizza, deleteIngredients, deleteDough } from '../store/actions';
 import ButtonElement, { CustomContent } from './buttonElement';
-import { CallToActionStyle } from '../styles/common';
 
 const PizzaGenerator = () => {
   const dispatch = useDispatch();
@@ -43,12 +42,10 @@ const PizzaGenerator = () => {
 
   return (
     <ButtonElement isDisabled={!doughPrice} onClick={makePizza}>
-      <CallToActionStyle isDisabled={!doughPrice}>
-        Add to basket
-        <CustomContent isHidden={!currentSelectionPrice}>
-          &nbsp;for {currentSelectionPrice}
-        </CustomContent>
-      </CallToActionStyle>
+      Add to basket
+      <CustomContent isHidden={!currentSelectionPrice}>
+        &nbsp;for {currentSelectionPrice}
+      </CustomContent>
     </ButtonElement>
   );
 };

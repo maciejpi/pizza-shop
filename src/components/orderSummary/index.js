@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import LinkElement from '../linkElement';
-import { CallToActionStyle, ItemName, ItemPrice } from '../../styles/common';
+import { ItemName, ItemPrice } from '../../styles/common';
 import {
   Aside,
   AsideInner,
@@ -26,9 +26,7 @@ const OrderSummary = ({ path, isCheckout }) => {
 
         {path === '/' && (
           <LinkElement linkTo="/checkout" isDisabled={!pizzas.length}>
-            <CallToActionStyle isDisabled={!pizzas.length}>
-              Go to checkout
-            </CallToActionStyle>
+            Go to checkout
           </LinkElement>
         )}
 

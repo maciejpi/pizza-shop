@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import { space } from '../styles/helpers';
+import { CallToActionStyles } from '../styles/common';
 
 const Button = styled.button`
+  ${CallToActionStyles}
   border: 0;
   padding: 0;
-  width: 100%;
   margin-top: ${space(4)};
 `;
 

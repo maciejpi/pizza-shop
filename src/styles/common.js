@@ -19,7 +19,7 @@ export const ItemPrice = styled.span`
   font: ${font({ size: 'medium', weight: 'bold' })};
 `;
 
-export const CallToActionStyle = styled.span`
+export const CallToActionStyles = css`
   font: ${font({ size: 'medium' })};
   display: flex;
   justify-content: center;
@@ -27,7 +27,7 @@ export const CallToActionStyle = styled.span`
   width: 100%;
   height: 54px;
   border-radius: ${radius}px;
-  background: ${props => (props.isDisabled ? colors.greyDark : colors.red)};
+  background: ${props => (props.disabled ? colors.greyDark : colors.red)};
   color: ${colors.white};
 `;
 
