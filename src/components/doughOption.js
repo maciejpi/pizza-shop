@@ -5,7 +5,9 @@ import styled from 'styled-components/macro';
 import Input from './input';
 import { setDough } from '../store/actions';
 import { colors } from '../styles/variables';
-import { ClickAreaBase, ItemName, ItemPrice } from '../styles/common';
+import Input from './input';
+
+import { currency } from '../helpers';
 
 const ClickArea = styled(ClickAreaBase)`
   flex-direction: column;
@@ -38,7 +40,7 @@ const DoughOption = ({ size, price, label }) => {
             onChange={() => handleDoughSelection(size, price)}
             isHidden
           />
-          <ItemPrice>{price}</ItemPrice>
+          <ItemPrice>{currency.format(price)}</ItemPrice>
         </ClickArea>
       </label>
     </>

@@ -5,6 +5,7 @@ import { toggleIngredient } from '../../store/actions';
 import Input from '../input';
 import { ClickArea, Checkbox, CheckboxWrapper } from './style';
 import { ItemName, ItemPrice } from '../../styles/common';
+import { currency } from '../../helpers';
 
 const Ingredient = ({ label, type, price }) => {
   // setting the ref prevents dispatching 'toggleIngredient' on first render
@@ -44,7 +45,7 @@ const Ingredient = ({ label, type, price }) => {
               isHidden
             />
           </CheckboxWrapper>
-          <ItemPrice>{price}</ItemPrice>
+          <ItemPrice>{currency.format(price)}</ItemPrice>
         </ClickArea>
       </label>
     </>

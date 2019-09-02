@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { createPizza, deleteIngredients, deleteDough } from '../store/actions';
 import ButtonElement, { CustomContent } from './buttonElement';
+import { currency } from '../helpers';
 
 const PizzaGenerator = () => {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ const PizzaGenerator = () => {
     <ButtonElement isDisabled={!doughPrice} onClick={makePizza}>
       Add to basket
       <CustomContent isHidden={!currentSelectionPrice}>
-        &nbsp;for {currentSelectionPrice}
+        &nbsp;for {currency.format(currentSelectionPrice)}
       </CustomContent>
     </ButtonElement>
   );
