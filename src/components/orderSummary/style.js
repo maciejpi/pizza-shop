@@ -40,4 +40,7 @@ export const TotalPrice = styled.div`
   padding-top: ${space(2)};
 `;
 
-export const SummaryTitle = styled.h2``;
+export const SummaryTitle = styled.h2`
+  margin-top: ${space()};
+  text-align: center;
+`;

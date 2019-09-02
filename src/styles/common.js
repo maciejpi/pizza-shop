@@ -42,3 +42,22 @@ export const Layout = styled.div`
   justify-content: space-between;
   margin-bottom: ${space(10)};
 `;
+
+export const FormLabel = styled.label`
+  margin-top: ${space(4)};
+  display: block;
+`;
+
+export const FormSectionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const FormElementsWrapper = styled.div`
+  display: flex;
+  div {
+    &:nth-of-type(2) {
+      margin-left: ${space(2)};
+    }
+  }
+`;

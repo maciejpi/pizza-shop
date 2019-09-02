@@ -15,3 +15,7 @@ export const colors = {
 
 export const mainSectionWidth = 600;
 export const radius = 4;
+
+export const inputWidthLarge = 460;
+export const inputWidthMedium = 180;
+export const inputWidthSmall = 124;

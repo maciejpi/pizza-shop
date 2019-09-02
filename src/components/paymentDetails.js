@@ -1,6 +1,18 @@
 import React from 'react';
 
 import Input from './input';
+import styled from 'styled-components/macro';
+
+import { colors, inputWidthLarge, inputWidthMedium } from '../styles/variables';
+import {
+  FormLabel,
+  FormSectionWrapper,
+  FormElementsWrapper,
+} from '../styles/common';
+
+const ErrorMsg = styled.p`
+  color: ${colors.red};
+`;
 
 const PaymentDetails = props => {
   const {
@@ -10,38 +22,48 @@ const PaymentDetails = props => {
   } = props;
 
   return (
-    <>
-      <h2>Contact Details</h2>
+    <FormSectionWrapper>
+      <h2>Payment Details</h2>
 
-      {cardError && <p>The card is invalid!</p>}
+      {cardError && <ErrorMsg>Please check your card details!</ErrorMsg>}
 
-      <label htmlFor="cardNumber">Card Number</label>
+      <FormLabel htmlFor="cardNumber">Card Number</FormLabel>
       <Input
         type="number"
         name="cardNumber"
         id="cardNumber"
         value={cardNumber}
         onChange={handlePaymentChange}
+        width={inputWidthLarge}
       />
+      <FormElementsWrapper>
+        <div>
+          <FormLabel htmlFor="expDate">Expiry Date</FormLabel>
+          <Input
+            type="text"
+            name="expDate"
+            id="expDate"
+            value={expDate}
+            onChange={handlePaymentChange}
+            placeholder="MM/YYYY"
+            width={inputWidthMedium}
+          />
+        </div>
 
-      <label htmlFor="expDate">Expiry Date</label>
-      <Input
-        type="text"
-        name="expDate"
-        id="expDate"
-        value={expDate}
-        onChange={handlePaymentChange}
-      />
-
-      <label htmlFor="cvvNumber">CVV Number</label>
-      <Input
-        type="number"
-        name="cvvNumber"
-        id="cvvNumber"
-        value={cvvNumber}
-        onChange={handlePaymentChange}
-      />
-    </>
+        <div>
+          <FormLabel htmlFor="cvvNumber">Security Code</FormLabel>
+          <Input
+            type="number"
+            name="cvvNumber"
+            id="cvvNumber"
+            value={cvvNumber}
+            onChange={handlePaymentChange}
+            placeholder="CVV"
+            width={inputWidthMedium}
+          />
+        </div>
+      </FormElementsWrapper>
+    </FormSectionWrapper>
   );
 };
 

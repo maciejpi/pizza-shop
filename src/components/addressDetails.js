@@ -1,6 +1,16 @@
 import React from 'react';
 
 import Input from './input';
+import {
+  inputWidthLarge,
+  inputWidthMedium,
+  inputWidthSmall,
+} from '../styles/variables';
+import {
+  FormLabel,
+  FormSectionWrapper,
+  FormElementsWrapper,
+} from '../styles/common';
 
 const AddressDetails = props => {
   const {
@@ -9,44 +19,59 @@ const AddressDetails = props => {
   } = props;
 
   return (
-    <>
-      <h2>Address</h2>
-      <label htmlFor="street">Street</label>
-      <Input
-        type="text"
-        name="street"
-        id="street"
-        value={street}
-        onChange={handleAddressChange}
-      />
+    <FormSectionWrapper>
+      <FormElementsWrapper>
+        <div>
+          <FormLabel htmlFor="street">Street</FormLabel>
+          <Input
+            type="text"
+            name="street"
+            id="street"
+            value={street}
+            onChange={handleAddressChange}
+            width={inputWidthLarge}
+          />
+        </div>
 
-      <label htmlFor="houseNumber">House Number</label>
-      <Input
-        type="text"
-        name="houseNumber"
-        id="houseNumber"
-        value={houseNumber}
-        onChange={handleAddressChange}
-      />
+        <div>
+          <FormLabel htmlFor="houseNumber">House No</FormLabel>
+          <Input
+            type="text"
+            name="houseNumber"
+            id="houseNumber"
+            value={houseNumber}
+            onChange={handleAddressChange}
+            width={inputWidthSmall}
+          />
+        </div>
+      </FormElementsWrapper>
 
-      <label htmlFor="postCode">Post Code</label>
-      <Input
-        type="text"
-        name="postCode"
-        id="postCode"
-        value={postCode}
-        onChange={handleAddressChange}
-      />
+      <FormElementsWrapper>
+        <div>
+          <FormLabel htmlFor="postCode">Post Code</FormLabel>
+          <Input
+            type="text"
+            name="postCode"
+            id="postCode"
+            value={postCode}
+            onChange={handleAddressChange}
+            width={inputWidthMedium}
+          />
+        </div>
 
-      <label htmlFor="city">City</label>
-      <Input
-        type="text"
-        name="city"
-        id="city"
-        value={city}
-        onChange={handleAddressChange}
-      />
-    </>
+        <div>
+          <FormLabel htmlFor="city">City</FormLabel>
+          <Input
+            type="text"
+            name="city"
+            id="city"
+            value={city}
+            onChange={handleAddressChange}
+            width={inputWidthMedium}
+          />
+        </div>
+      </FormElementsWrapper>
+    </FormSectionWrapper>
   );
 };
 

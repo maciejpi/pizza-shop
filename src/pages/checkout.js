@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
+import styled from 'styled-components/macro';
 
 import {
   AddressDetails,
@@ -8,10 +9,16 @@ import {
   OrderSummary,
   PaymentDetails,
   Header,
+  ButtonElement,
 } from '../components';
 import { validCard } from '../data';
 import { deletePizzas } from '../store/actions';
 import { Layout } from '../styles/common';
+import { mainSectionWidth } from '../styles/variables';
+
+export const Form = styled.form`
+  width: ${mainSectionWidth}px;
+`;
 
 const Checkout = ({ match }) => {
   const dispatch = useDispatch();
@@ -83,7 +90,6 @@ const Checkout = ({ match }) => {
         address: { ...addressState },
       },
       paymentInfo: { ...paymentState },
-      orderedFood: [...pizzas],
     };
 
     console.log(order);
@@ -95,28 +101,30 @@ const Checkout = ({ match }) => {
     <>
       <Header {...match} />
       <Layout>
-      {orderPlaced && <Redirect to="/order-confirmation" />}
+        <main>
+          {orderPlaced && <Redirect to="/order-confirmation" />}
 
-      <h1>checkout</h1>
-      <form onSubmit={handleSubmit}>
-        <ContactDetails
-          handleContactChange={handleContactChange}
-          contactState={contactState}
-        />
+          <Form onSubmit={handleSubmit}>
+            <ContactDetails
+              handleContactChange={handleContactChange}
+              contactState={contactState}
+            />
 
-        <AddressDetails
-          handleAddressChange={handleAddressChange}
-          addressState={addressState}
-        />
+            <AddressDetails
+              handleAddressChange={handleAddressChange}
+              addressState={addressState}
+            />
 
-        <PaymentDetails
-          cardError={cardError}
-          handlePaymentChange={handlePaymentChange}
-          paymentState={paymentState}
-        />
+            <PaymentDetails
+              cardError={cardError}
+              handlePaymentChange={handlePaymentChange}
+              paymentState={paymentState}
+            />
 
-        <button type="submit">Place Order</button>
-      </form>
+            <ButtonElement type="submit">Place Order</ButtonElement>
+          </Form>
+        </main>
+
         <OrderSummary {...match} />
       </Layout>
     </>

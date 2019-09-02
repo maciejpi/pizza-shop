@@ -2,29 +2,37 @@ import React from 'react';
 
 import Input from './input';
 
+import { inputWidthLarge } from '../styles/variables';
+import { FormLabel, FormSectionWrapper } from '../styles/common';
+
 const ContactDetails = props => {
-  const { contactState, handleContactChange } = props;
+  const {
+    contactState: { name, phone },
+    handleContactChange,
+  } = props;
 
   return (
-    <>
-      <h2>Contact Details</h2>
-      <label htmlFor="name">Name</label>
+    <FormSectionWrapper>
+      <h2>Delivery Details</h2>
+      <FormLabel htmlFor="name">Name</FormLabel>
       <Input
         type="text"
         name="name"
         id="name"
-        value={contactState.name}
+        value={name}
         onChange={handleContactChange}
+        width={inputWidthLarge}
       />
-      <label htmlFor="phone">Phone Number</label>
+      <FormLabel htmlFor="phone">Phone Number</FormLabel>
       <Input
-        type="text"
+        type="number"
         name="phone"
         id="phone"
-        value={contactState.phone}
+        value={phone}
         onChange={handleContactChange}
+        width={inputWidthLarge}
       />
-    </>
+    </FormSectionWrapper>
   );
 };
 
