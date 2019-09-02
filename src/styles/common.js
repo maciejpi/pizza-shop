@@ -1,12 +1,12 @@
 import styled from 'styled-components/macro';
 
-import { colors } from './variables';
+import { colors, radius } from './variables';
 import { font } from './helpers';
 
 export const ClickAreaBase = styled.span`
   display: flex;
   align-items: center;
-  border-radius: 4px;
+  border-radius: ${radius}px;
   background-color: ${colors.white};
   cursor: pointer;
 `;
@@ -26,7 +26,7 @@ export const CallToActionStyle = styled.span`
   align-items: center;
   width: 100%;
   height: 54px;
-  border-radius: 4px;
+  border-radius: ${radius}px;
   background: ${props => (props.isDisabled ? colors.greyDark : colors.red)};
   color: ${colors.white};
 `;

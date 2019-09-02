@@ -10,9 +10,10 @@ const WrapperBase = styled.div`
 
 export const DoughOptionsWrapper = styled(WrapperBase)`
   justify-content: space-between;
-  margin-top: ${space(2.5)};
+  margin-top: ${space(3)};
 `;
 
 export const IngredientOptionsWrapper = styled(WrapperBase)`
   flex-direction: column;
+  margin-top: ${space()};
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { createPizza, deleteIngredients, deleteDough } from '../store/actions';
-import ButtonElement, { ButtonWrapper, CustomContent } from './buttonElement';
+import ButtonElement, { CustomContent } from './buttonElement';
 import { CallToActionStyle } from '../styles/common';
 
 const PizzaGenerator = () => {
@@ -42,16 +42,14 @@ const PizzaGenerator = () => {
   };
 
   return (
-    <ButtonWrapper>
-      <ButtonElement isDisabled={!doughPrice} onClick={makePizza}>
-        <CallToActionStyle isDisabled={!doughPrice}>
-          Add to basket
-          <CustomContent isDisabled={!currentSelectionPrice}>
-            &nbsp;for {currentSelectionPrice}
-          </CustomContent>
-        </CallToActionStyle>
-      </ButtonElement>
-    </ButtonWrapper>
+    <ButtonElement isDisabled={!doughPrice} onClick={makePizza}>
+      <CallToActionStyle isDisabled={!doughPrice}>
+        Add to basket
+        <CustomContent isHidden={!currentSelectionPrice}>
+          &nbsp;for {currentSelectionPrice}
+        </CustomContent>
+      </CallToActionStyle>
+    </ButtonElement>
   );
 };
 

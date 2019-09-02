@@ -14,3 +14,4 @@ export const colors = {
 };
 
 export const mainSectionWidth = 600;
+export const radius = 4;
