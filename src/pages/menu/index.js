@@ -33,7 +33,7 @@ const Menu = ({ match }) => (
         <PizzaGenerator />
       </main>
 
-      <OrderSummary {...match}></OrderSummary>
+      <OrderSummary {...match} isAligned />
     </Layout>
   </>
 );

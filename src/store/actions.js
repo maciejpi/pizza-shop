@@ -35,6 +35,13 @@ export const createPizza = data => {
   };
 };
 
+export const deletePizza = index => {
+  return {
+    type: actionTypes.DELETE_PIZZA,
+    index,
+  };
+};
+
 export const deletePizzas = () => {
   return {
     type: actionTypes.DELETE_PIZZAS,

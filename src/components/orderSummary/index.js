@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import LinkElement from '../linkElement';
 import { ItemName, ItemPrice } from '../../styles/common';
@@ -11,12 +11,18 @@ import {
   OrderItem,
   WithIngs,
   TotalPrice,
+  CurrentItemPrice,
+  CancelIem,
 } from './style';
 import { capitalize, currency } from '../../helpers';
+import { deletePizza } from '../../store/actions';
 
-const OrderSummary = ({ path, isCheckout }) => {
+const OrderSummary = ({ path, isCheckout, isAligned }) => {
+  const dispatch = useDispatch();
   const pizzas = useSelector(state => state.selectedPizzas);
   const totalPrice = pizzas.reduce((total, pizza) => total + pizza.price, 0);
+
+  const removeItem = i => dispatch(deletePizza(i));
 
   return (
     <Aside>
@@ -40,13 +46,22 @@ const OrderSummary = ({ path, isCheckout }) => {
                       With {ingredients.join(', ')}
                     </WithIngs>
                   </div>
-                  <ItemPrice>{currency.format(price)}</ItemPrice>
+                  <CurrentItemPrice>
+                    <ItemPrice>{currency.format(price)}</ItemPrice>
+                    {path === '/' && (
+                      <CancelIem type="button" onClick={() => removeItem(i)}>
+                        x
+                      </CancelIem>
+                    )}
+                  </CurrentItemPrice>
                 </OrderItem>
               ))}
             </div>
             <TotalPrice>
               <ItemPrice>Total</ItemPrice>
-              <ItemPrice>{currency.format(totalPrice)}</ItemPrice>
+              <ItemPrice isAligned={isAligned}>
+                {currency.format(totalPrice)}
+              </ItemPrice>
             </TotalPrice>
           </>
         ) : (

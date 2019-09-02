@@ -17,6 +17,7 @@ export const ItemName = styled.span`
 
 export const ItemPrice = styled.span`
   font: ${font({ size: 'medium', weight: 'bold' })};
+  padding-right: ${props => props.isAligned && `${space(2)}`};
 `;
 
 export const CallToActionStyles = css`

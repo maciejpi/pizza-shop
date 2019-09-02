@@ -42,7 +42,7 @@ const PizzaGenerator = () => {
   };
 
   return (
-    <ButtonElement isDisabled={!doughPrice} onClick={makePizza}>
+    <ButtonElement isDisabled={!doughPrice} onClick={makePizza} type="button">
       Add to basket
       <CustomContent isHidden={!currentSelectionPrice}>
         &nbsp;for {currency.format(currentSelectionPrice)}

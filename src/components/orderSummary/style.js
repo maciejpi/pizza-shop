@@ -44,3 +44,15 @@ export const SummaryTitle = styled.h2`
   margin-top: ${space()};
   text-align: center;
 `;
+
+export const CurrentItemPrice = styled.span`
+  display: flex;
+  align-items: center;
+`;
+
+export const CancelIem = styled.button`
+  border: 0;
+  background: none;
+  padding: 0;
+  margin-left: ${space()};
+`;

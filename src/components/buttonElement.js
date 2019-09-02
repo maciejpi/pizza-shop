@@ -15,8 +15,8 @@ export const CustomContent = styled.span`
   display: ${props => props.isHidden && 'none'};
 `;
 
-const ButtonElement = ({ children, isDisabled, onClick }) => (
-  <Button disabled={isDisabled} onClick={onClick}>
+const ButtonElement = ({ children, isDisabled, onClick, type }) => (
+  <Button disabled={isDisabled} onClick={onClick} type={type}>
     {children}
   </Button>
 );
