@@ -2,7 +2,7 @@ export const fontSizes = {
   small: 16,
   medium: 20,
   large: 24,
-  heading: 40,
+  heading: 36,
 };
 
 export const colors = {

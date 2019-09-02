@@ -1,27 +1,37 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { Link } from 'react-router-dom';
 
 import { colors } from '../styles/variables';
-import Layout from './layout';
+import { PageWidthStyles } from '../styles/common';
 
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 120px;
+  height: 100px;
   background-color: ${colors.red};
 `;
 
-const AppTittle = styled.h1`
-  margin: 0;
+const StyledLink = styled(Link)`
+  text-decoration: none;
   color: ${colors.white};
 `;
 
-const Header = () => (
+const AppTittle = styled.h1`
+  ${PageWidthStyles}
+  color: ${colors.white};
+`;
+
+const Header = ({ path, isExact }) => (
   <StyledHeader>
-    <Layout>
-      <AppTittle>Pizza</AppTittle>
-    </Layout>
+    {!path !== '/' && isExact ? (
+      <AppTittle>
+        <StyledLink to="/">Order a pizza</StyledLink>
+      </AppTittle>
+    ) : (
+      <AppTittle>Order a pizza</AppTittle>
+    )}
   </StyledHeader>
 );
 

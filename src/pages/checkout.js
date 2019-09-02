@@ -7,11 +7,13 @@ import {
   ContactDetails,
   OrderSummary,
   PaymentDetails,
+  Header,
 } from '../components';
 import { validCard } from '../data';
 import { deletePizzas } from '../store/actions';
+import { Layout } from '../styles/common';
 
-const Checkout = () => {
+const Checkout = ({ location, match }) => {
   const dispatch = useDispatch();
   const pizzas = useSelector(state => state.selectedPizzas);
   const [orderPlaced, setOrderPlaced] = useState(false);
@@ -91,6 +93,8 @@ const Checkout = () => {
 
   return (
     <>
+      <Header {...match} />
+      <Layout>
       {orderPlaced && <Redirect to="/order-confirmation" />}
 
       <h1>checkout</h1>
@@ -113,7 +117,8 @@ const Checkout = () => {
 
         <button type="submit">Place Order</button>
       </form>
-      <OrderSummary></OrderSummary>
+        <OrderSummary {...location} />
+      </Layout>
     </>
   );
 };

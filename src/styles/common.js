@@ -1,7 +1,7 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
 import { colors, radius } from './variables';
-import { font } from './helpers';
+import { font, space } from './helpers';
 
 export const ClickAreaBase = styled.span`
   display: flex;
@@ -29,4 +29,16 @@ export const CallToActionStyle = styled.span`
   border-radius: ${radius}px;
   background: ${props => (props.isDisabled ? colors.greyDark : colors.red)};
   color: ${colors.white};
+`;
+
+export const PageWidthStyles = css`
+  width: 980px;
+  margin: 0 auto;
+`;
+
+export const Layout = styled.div`
+  ${PageWidthStyles}
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: ${space(10)};
 `;

@@ -8,7 +8,6 @@ import ContactDetails from './contactDetails';
 import PaymentDetails from './paymentDetails';
 import Input from './input';
 import Header from './header';
-import Layout from './layout';
 import ButtonElement from './buttonElement';
 import LinkElement from './linkElement';
 
@@ -23,7 +22,6 @@ export {
   PaymentDetails,
   Input,
   Header,
-  Layout,
   ButtonElement,
   LinkElement,
 };
