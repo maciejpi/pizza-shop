@@ -34,6 +34,7 @@ const PaymentDetails = props => {
         value={cardNumber}
         onChange={handlePaymentChange}
         width={inputWidthLarge}
+        hasError={cardError}
       />
 
       <FormElementsWrapper>
@@ -47,6 +48,7 @@ const PaymentDetails = props => {
             onChange={handlePaymentChange}
             placeholder="MM/YY"
             width={inputWidthMedium}
+            hasError={cardError}
           />
         </div>
 
@@ -60,6 +62,7 @@ const PaymentDetails = props => {
             onChange={handlePaymentChange}
             placeholder="CVV"
             width={inputWidthMedium}
+            hasError={cardError}
           />
         </div>
       </FormElementsWrapper>

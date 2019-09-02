@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components/macro';
 
 import { space } from '../styles/helpers';
+import { colors } from '../styles/variables';
 
 const StyledInput = styled.input`
   ${props =>
@@ -19,6 +20,12 @@ const StyledInput = styled.input`
       visibility: hidden;
       position: absolute;
     `};
+
+  ${props =>
+    props.hasError &&
+    css`
+      border: 1px solid ${colors.red};
+    `};
 `;
 
 const Input = props => {
@@ -32,6 +39,7 @@ const Input = props => {
     isHidden,
     width,
     placeholder,
+    hasError,
   } = props;
 
   return (
@@ -45,6 +53,7 @@ const Input = props => {
       isHidden={isHidden}
       width={width}
       placeholder={placeholder}
+      hasError={hasError}
     />
   );
 };
