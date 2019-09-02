@@ -61,3 +61,14 @@ export const FormElementsWrapper = styled.div`
     }
   }
 `;
+
+export const LayoutSecondary = styled.div`
+  ${PageWidthStyles}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    margin-top: ${space(20)};
+  }
+`;

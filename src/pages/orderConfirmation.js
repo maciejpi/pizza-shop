@@ -1,13 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const OrderConfirmation = () => {
-  return (
-    <>
-      <h1>Your pizza is on its way</h1>
-      <Link to="/">Go back to homepage</Link>
-    </>
-  );
-};
+import { Header, LinkElement } from '../components';
+import { LayoutSecondary } from '../styles/common';
+
+const OrderConfirmation = ({ match }) => (
+  <>
+    <Header {...match} />
+    <LayoutSecondary>
+      <h2>Your pizza is on its way</h2>
+      <LinkElement linkTo="/" secondary>
+        Go back to homepage
+      </LinkElement>
+    </LayoutSecondary>
+  </>
+);
 
 export default OrderConfirmation;

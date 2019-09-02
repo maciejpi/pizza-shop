@@ -1,10 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { Header } from '../components';
+import { LayoutSecondary } from '../styles/common';
+import LinkElement from './linkElement';
 
 const NotFound = () => (
   <>
-    <h2>This page doesn't exist.</h2>
-    <Link to="/">Go back to homepage.</Link>
+    <Header />
+    <LayoutSecondary>
+      <h2>This page doesn't exist</h2>
+      <LinkElement linkTo="/" secondary>
+        Go back to homepage
+      </LinkElement>
+    </LayoutSecondary>
   </>
 );
 
