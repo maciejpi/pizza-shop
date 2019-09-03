@@ -11,7 +11,7 @@ import {
   Header,
   ButtonElement,
 } from '../components';
-import { validCard } from '../data';
+import { cardRegex, expDateRegex, cvvRegex } from '../helpers';
 import { deletePizzas } from '../store/actions';
 import { Layout } from '../styles/common';
 import { mainSectionWidth } from '../styles/variables';
@@ -68,16 +68,15 @@ const Checkout = ({ match }) => {
     });
   };
 
-  const isCardValid = (cardObj, testCard) => {
-    return Object.keys(testCard).every(key => {
-      return cardObj.hasOwnProperty(key) && cardObj[key] === testCard[key];
-    });
-  };
+  const isCardValid =
+    cardRegex(paymentState.cardNumber) &&
+    cvvRegex(paymentState.cvvNumber) &&
+    expDateRegex(paymentState.expDate);
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (!isCardValid(paymentState, validCard)) {
+    if (!isCardValid) {
       setCardError(true);
       return;
     }

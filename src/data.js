@@ -10,9 +10,3 @@ export const ingredientOptions = [
   { type: 'mushrooms', label: 'Mushrooms', price: 2 },
   { type: 'pepper', label: 'Pepper', price: 2 },
 ];
-
-export const validCard = {
-  cardNumber: '4024007149540634',
-  expDate: '02/20',
-  cvvNumber: '606',
-};
